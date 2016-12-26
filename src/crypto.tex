@@ -20,7 +20,7 @@
 
 \usetheme{Darmstadt}
 
-\title{Hygiène cryptographique}
+\title{Quelle place pour GPG chez Advanced ?}
 
 \author{\cc Ilan 'trog' Dubois}
 
@@ -139,6 +139,49 @@
                     La signature permet d'authentifier l'origin d'un fichier. On peut donc s'assurer qu'un build, une release ou autre n'a pas été modifié.
                     Dans le cas d'un programme, on s'assure alors qu'aucune back door n'a été ajoutée par exemple ;)
                 \end{tcolorbox}
+            \end{center}
+        \end{frame}
+        \begin{frame}{label=keychain}
+            \frametitle{Keychain}
+            La \textbf{keychain} est l'ensemble des clés connues de GPG.
+            \begin{center}
+                \begin{itemize}
+                    \item Stocke les clés publiques de vos contacts ainsi que toutes les informations associées.
+                    \item Stocke vos paires de clé publique/privé.
+                    \item Il est très facile de télécharger de nouvelles clés depuis les différents serveurs de clé.
+                \end{itemize}
+                \begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=Pour mettre à jour la keyring]
+                    > gpg -{}-refresh-keys
+                \end{tcolorbox}
+            \end{center}
+        \end{frame}
+        \begin{frame}{label=trust}
+            \frametitle{Web of Trust}
+            \textbf{Web of Trust} est le concept utilisé par PGP pour assurer que les clés sont bien détenues par leur propriétaire déclaré.
+            \begin{center}
+                \begin{itemize}
+                    \item Chaque clé peut signer ou être signée par une autre clé. Différents degré de confiance est accordé à chaque signature.
+                    \item La possibilité pour tout le monde de signer des clés évite d'avoir à \textit{croire} une autorité unique et externe.
+                    \item La toile de confiance ainsi crée vous permet de récupérer des clés de façon fiable.
+                    \item Les clés et leur signatures doivent être disponibles sur un serveur de clés pour propager les clés et leur signature.
+                    \item Avec une clé Advanced Schema et des signatures multiples entre détenteurs de clé, la toile de confiance est largement suffisante.
+                \end{itemize}
+            \end{center}
+        \end{frame}
+        \begin{frame}
+            \frametitle{Exemple de Web of Trust}
+            \begin{center}
+                \begin{figure}
+                    \includegraphics[scale=0.27]{img/trust.png}
+                \end{figure}
+            \end{center}
+        \end{frame}
+        \begin{frame}
+            \begin{center}
+                \begin{figure}
+                    \includegraphics[scale=0.60]{img/security.png}
+                    \caption{\cc --- xkcd}
+                \end{figure}
             \end{center}
         \end{frame}
         \appendix
