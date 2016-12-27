@@ -118,11 +118,10 @@
             \frametitle{Un petit historique}
             \begin{center}
                 \begin{itemize}
-                    \item Protocole inventé en 1991 par Phil Zimmerman, également inventeur de ZRTP. Destiné au début pour les emails.
-                    \item Sa grande performance et sécurité ont fait que PGP est utilisé pour bien d'autres objectifs aujourd'hui, aptitude utilise GPG pour signer les paquets, Debian l'utilise pour son système de vote relative aux orientations de développement.
-                    \item L'implémentation la plus connue est GPG (GNU Privacy Guard). Elle est maintenue par un petit groupe de dev berlinois, financé depuis peu entre autre par Facebook.
-                    \item Phil Zimmerman était poursuivi pour export illégal de munition car la distribution à l'étranger de système de cryptographie utilisant des clés de plus de 40 bits.
-                    \item Pour contourner cette régulation il publia un livre contenant l'intégrlaité du code source de PGP, l'export de livre étant protégé par la constitution américaine. GG
+                    \item Protocole inventé en 1991 par Phil Zimmerman, également inventeur de ZRTP.
+                    \item Sa grande performance et sécurité ont fait que PGP est utilisé pour bien d'autres objectifs aujourd'hui (package manager, versionnement, \ldots)
+                    \item L'implémentation la plus connue est GPG (GNU Privacy Guard). Elle est maintenue par un petit groupe, financé depuis peu entre autre par Facebook.
+                    \item Pour contourner la régulation il publia le code sous forme de livre, l'export de livre étant protégé par la constitution américaine. GG
                 \end{itemize}
             \end{center}
         \end{frame}
@@ -155,6 +154,15 @@
                 \end{tcolorbox}
             \end{center}
         \end{frame}
+        \begin{frame}
+            \frametitle{Man in the middle}
+            \begin{center}
+                \begin{figure}
+                    \includegraphics[scale=0.2]{img/mitm.png}
+                    \caption{\cc --- Abstruse Goose}
+                \end{figure}
+            \end{center}
+        \end{frame}
         \begin{frame}{label=trust}
             \frametitle{Web of Trust}
             \textbf{Web of Trust} est le concept utilisé par PGP pour assurer que les clés sont bien détenues par leur propriétaire déclaré.
@@ -174,6 +182,19 @@
                 \begin{figure}
                     \includegraphics[scale=0.27]{img/trust.png}
                 \end{figure}
+            \end{center}
+        \end{frame}
+        \begin{frame}{label=signin}
+            \frametitle{Pourquoi signer ?}
+            Une \textbf{signature cryptographique} est le procédé qui permet d'assurer que le détenteur de la clé de signature en approuve le contenu.
+            \begin{center}
+                \begin{itemize}
+                    \item GPG support très bien l'utilisation de ce procédé et permet aisin de vérifier l'origine des documents signés.
+                    \item Cela permet d'éviter qu'un attaquant ne puisse modifier le message envoyé.
+                    \item Pour du code ou un binaire, cela évite les back-doors par exemple.
+                    \item Le système de signature est très fiable, il s'agit simplement du système de chiffrement inversé.
+                    \item C'est pourquoi GPG va vous générer des sous-clés \textbf{SC} (signe et certifie) et \textbf{E} (chiffre).
+                \end{itemize}
             \end{center}
         \end{frame}
         \begin{frame}
