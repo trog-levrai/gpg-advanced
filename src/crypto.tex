@@ -197,7 +197,15 @@
                 \end{itemize}
             \end{center}
         \end{frame}
-    \subsection{Génération des clés}
+        \begin{frame}
+            \begin{center}
+                \begin{figure}
+                    \includegraphics[scale=0.60]{img/security.png}
+                    \caption{\cc --- xkcd}
+                \end{figure}
+            \end{center}
+        \end{frame}
+    \subsection{Mise en route}
         \begin{frame}{label=generate}
             \frametitle{Installation}
             Pour la gestin des clés, une installation suffira \cite{best}:
@@ -208,14 +216,11 @@
                     \item MacOS: installer GPG Suite from GPG Tools (pas nécessaire mais pratique)
                 \end{itemize}
             \end{center}
-        \end{frame}
-        \begin{frame}
-            \begin{center}
-                \begin{figure}
-                    \includegraphics[scale=0.60]{img/security.png}
-                    \caption{\cc --- xkcd}
-                \end{figure}
-            \end{center}
+            \begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=Configuration]
+                Pour augmanter encore un peu la robustesse, je vous conseil d'utiliser la configuration duraconf pour GPG.
+                Vous pourrez remplacer keyserver et ses options pour le serveur de clés Advanced.
+                Une fois la clé génrérée, remplacer default-key
+            \end{tcolorbox}
         \end{frame}
         \begin{frame}{label=email}
             \frametitle{Client mail}
@@ -225,7 +230,17 @@
                     \item Thunderbird + Enigmail
                     \item Outlook + GpgpOl (intallé avec Gpg4win)
                     \item Mail + GPGMail (pas encore pour Sierra)
+                    \item K9Mail + APG pour Android
                 \end{itemize}
+            \end{center}
+        \end{frame}
+        \begin{frame}{label=generate}
+            \frametitle{Génération des clés}
+            Ouvrez l'option de génération de votre outil favoris et utilisez les paramètres suivants:
+            \begin{center}
+                \begin{figure}
+                    \includegraphics[scale=0.40]{img/gen.png}
+                \end{figure}
             \end{center}
         \end{frame}
         \appendix
