@@ -200,8 +200,8 @@
         \begin{frame}
             \begin{center}
                 \begin{figure}
-                    \includegraphics[scale=0.60]{img/security.png}
-                    \caption{\cc --- xkcd}
+                    \includegraphics[scale=0.35]{img/signature.png}
+                    \caption{Attaque du collège éléctoral américain pour l'éléction 2016}
                 \end{figure}
             \end{center}
         \end{frame}
@@ -221,6 +221,14 @@
                 Vous pourrez remplacer keyserver et ses options pour le serveur de clés Advanced.
                 Une fois la clé génrérée, remplacer default-key
             \end{tcolorbox}
+        \end{frame}
+        \begin{frame}
+            \begin{center}
+                \begin{figure}
+                    \includegraphics[scale=0.60]{img/security.png}
+                    \caption{\cc --- xkcd}
+                \end{figure}
+            \end{center}
         \end{frame}
         \begin{frame}{label=email}
             \frametitle{Client mail}
@@ -242,6 +250,11 @@
                     \includegraphics[scale=0.40]{img/gen.png}
                 \end{figure}
             \end{center}
+        \end{frame}
+        \begin{frame}{label=revoke}
+            \frametitle{Certificat de révocation}
+            Si vous perdez accès à votre clé privée, ou que celle-ci est compromise, vous pouvez le faire savoir à l'aide du certificat de révocation.
+            Celui-ci indique que pour une raison ou pour une autre, il ne faut plus utiliser cette clé. Il est donc important que vous le génériez et que vous en gardiez une copie (chiffrée symmétriquement).
         \end{frame}
         \appendix
         \begin{frame}
